@@ -3,12 +3,8 @@
 (defn ft [col]
   (reduce
     (fn [count item]
-      (if (map? count)
-        (assoc count item (inc (get count item 0)))
-        (-> (assoc {} count 1)
-            (assoc item (if (= count item) 2 1)))))
-    col))
-
+        (assoc count item (inc (get count item 0))))
+    {} col))
 
 (ft [1 1 2 3 2 1 1])
 
